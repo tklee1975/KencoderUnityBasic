@@ -15,6 +15,7 @@ public class SingletonTest : BaseTest {
 	{
 		ShowScreenLog();
 		ShowCounterInfo();
+		PrefabSingleton.Instance.UpdateUI();
 	}
 
 	public void ShowCounterInfo() {

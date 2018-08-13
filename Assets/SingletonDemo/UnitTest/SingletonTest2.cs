@@ -10,6 +10,7 @@ public class SingletonTest2 : SingletonTest {
 	{
 		ShowScreenLog();
 		ShowCounterInfo();
+		PrefabSingleton.Instance.UpdateUI();
 	}
 
 
