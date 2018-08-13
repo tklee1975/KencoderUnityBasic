@@ -23,7 +23,8 @@ public class SingletonTest : BaseTest {
 		info += "SimpleSingleton: counter=" + SimpleSingleton.Instance.counter + "\n";
 		info += "SOSingleton: counter=" + SOSingleton.Instance.counter + "\n";
 		info += "GameCounter: counter=" + GameCounter.Instance.counter + "\n";
-		info += "GenericGameCounter: counter=" + GenericGameCounter.Instance.counter + "\n";
+		info += "MonoCounter: counter=" + MonoCounter.Instance.counter + "\n";
+		info += "SOCounter: counter=" + SOCounter.Instance.counter + "\n";
 		info += "PrefabSingleton: counter=" + PrefabSingleton.Instance.counter + "\n";
 
 		UpdateLog(info);
@@ -35,8 +36,9 @@ public class SingletonTest : BaseTest {
 	{
 		SimpleSingleton.Instance.counter++;
 		SOSingleton.Instance.IncreaseCounter();
+		SOCounter.Instance.IncreaseCounter();
 		GameCounter.Instance.counter++;
-		GenericGameCounter.Instance.counter++;
+		MonoCounter.Instance.counter++;
 		
 		PrefabSingleton.Instance.AddCounter();
 

@@ -4,11 +4,11 @@ using UnityEngine;
 
 
 // This sample code is based on the Unity Sample Code 2DGameKit/PhysicHelper
-public class GenericGameCounter : GenericMonoSingleton<GenericGameCounter>
+public class MonoCounter : GenericMonoSingleton<MonoCounter>
 {  
     #region Singleton Implementation
     protected override string GetSingletonName() {
-        return "GenericGameCounter";
+        return "MonoCounter";
     }
 
     protected override bool ShouldDestroyOnLoad() {  
@@ -16,7 +16,7 @@ public class GenericGameCounter : GenericMonoSingleton<GenericGameCounter>
     }
 
     protected override void DidAwake() {
-        Debug.Log("DEBUG: GenericGameCounter.DidAwake. default counter value=" + counter);
+        Debug.Log("DEBUG: MonoCounter.DidAwake. default counter value=" + counter);
     }
 
     #endregion
