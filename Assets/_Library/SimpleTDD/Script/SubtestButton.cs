@@ -46,7 +46,7 @@ namespace SimpleTDD {
 			}
 			string testName = GetLabelName();
 
-			Debug.Log("testName=" + testName);
+			//Debug.Log("testName=" + testName);
 			if(testOwner != null) {
 				testOwner.RunTest(testName);
 			}

@@ -25,14 +25,14 @@ namespace SimpleTDD
 
 
         private Transform mLogPanelTF;
-        private Text mLogText;
+        private Text mLogText = null;
 
         void Awake()
         {
             // setup the Log Panel 
             // Logging Panel and Text
             mLogPanelTF = transform.Find("LogPanel");
-            Debug.Log("Awake: mLogPanel=" + mLogPanelTF);
+            //Debug.Log("Awake: mLogPanel=" + mLogPanelTF);
             if (mLogPanelTF != null)
             {
                 mLogText = mLogPanelTF.Find("LogText").GetComponent<Text>();
@@ -124,7 +124,7 @@ namespace SimpleTDD
             button.SetTest(testName);
 
             button.testOwner = this;
-            Debug.Log("DEBUG: AddTestButton: position=" + position);
+            //Debug.Log("DEBUG: AddTestButton: position=" + position);
 
             RectTransform rt = button.gameObject.GetComponent<Transform>() as RectTransform;
             rt.anchoredPosition = position;
@@ -140,14 +140,18 @@ namespace SimpleTDD
             }
 
             RectTransform rectTrans = contentPanel as RectTransform;
-            return rectTrans.rect.size.x;
+            float size = rectTrans.rect.size.x;
+            if(size <= 0) {
+                return referenceWidth;
+            }
+            return size;
         }
 
         private void UpdateScrollViewHeight(float height)
         {
             RectTransform rectTrans = contentPanel as RectTransform;
             Vector2 size = rectTrans.sizeDelta;
-            Debug.Log("UpdateScrollViewHeight: sizeDelta: size=" + size);
+            //Debug.Log("UpdateScrollViewHeight: sizeDelta: size=" + size);
 
             size.y = height;
             rectTrans.sizeDelta = size;
